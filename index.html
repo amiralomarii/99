@@ -8,7 +8,8 @@
 <link rel="icon" type="image/png" href="https://i.ibb.co/vCF5tR84/download-20.png">
 
 <style>
-body {
+
+  body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #091921, #0d324d);
   display: flex;
@@ -413,6 +414,7 @@ body {
 </div>
 
 <script>
+
 const userPasswords = {
   hamada: "h",    // Hamada's password
   amir: "a3!!",
@@ -422,14 +424,33 @@ const userPasswords = {
 
 let selectedUser = "";
 
+
 // --- User Selection ---
+const userImages = {
+  hamada: "https://i.ibb.co/rGv2q2q5/IMG-20251121-WA0027-1-1.jpg",
+  amir: "https://i.ibb.co/N2xbmCGw/Amir-majdi-alomari.jpg",
+  baraa: "https://i.ibb.co/8g2vKpV3/Baraa-picture.jpg",
+  abdulrahman: "https://i.ibb.co/Xx9s6pF/abdulrahman.png"
+};
+
 document.querySelectorAll(".user-card button").forEach(btn => {
   btn.onclick = () => {
     selectedUser = btn.parentElement.dataset.user;
+
+    // Set logo to selected user's picture
+    const logo = document.querySelector(".logo");
+    if(userImages[selectedUser]){
+      logo.style.backgroundImage = `url(${userImages[selectedUser]})`;
+      logo.style.backgroundSize = "cover";
+      logo.style.backgroundPosition = "center";
+    }
+
+    // Show login card
     document.getElementById("userSelectScreen").style.display = "none";
     document.getElementById("loginCard").style.display = "block";
   };
 });
+
 
 // --- Password Login ---
 function login() {
@@ -488,7 +509,7 @@ function setupButtons(){
 
 // --- Gofile ---
 function openGofile(){
-  if(selectedUser !== "amir"){
+  if(selectedUser !== "amirz"){
     alert("Access Denied!");
     return;
   }
