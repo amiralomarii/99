@@ -451,6 +451,9 @@ document.getElementById("passwordInput").addEventListener("keypress", function(e
   if(e.key === "Enter") login();
 });
 
+// BUTTON triggers login
+document.getElementById("loginBtn").onclick = login;
+
 // --- Setup Buttons ---
 function setupButtons(){
   const buttons = document.querySelectorAll(".siteBtn");
