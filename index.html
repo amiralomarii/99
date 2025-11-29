@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Open Graph / Facebook -->
-<meta property="og:title" content="KNRC X Alnajat Launcher" />
-<meta property="og:description" content="Access your tools and resources for KNRC projects with our interactive launcher!" />
-<meta property="og:image" content="https://i.ibb.co/vCF5tR84/download-20.png" />
-<meta property="og:url" content="https://alrab3.xyz" />
-<meta property="og:type" content="website" />
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="KNRC X Alnajat Launcher" />
-<meta name="twitter:description" content="Access your tools and resources for KNRC projects with our interactive launcher!" />
-<meta name="twitter:image" content="https://i.ibb.co/vCF5tR84/download-20.png" />
-<meta name="twitter:url" content="https://alrab3.xyz" />
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KNRC X Alnajat</title> 
+<title>KNRC X Alnajat Launcher</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="https://i.ibb.co/vCF5tR84/download-20.png">
 
@@ -25,98 +11,119 @@
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #091921, #0d324d);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  margin:0;
-  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
 }
 
+/* Login & Launcher Cards */
 .card {
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(15px);
-  border-radius:20px;
-  padding:40px;
-  text-align:center;
-  max-width:480px;
-  width:90%;
-  box-shadow:0 8px 32px rgba(0,0,0,0.7);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
   transition: transform 0.3s;
   opacity: 0;
   animation: fadeIn 0.8s ease forwards;
 }
-.card:hover { transform: translateY(-5px) scale(1.02); }
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeOut {
   from { opacity: 1; transform: translateY(0); }
   to { opacity: 0; transform: translateY(20px); }
 }
 
 .logo {
-  width:80px;
-  height:80px;
-  margin-bottom:20px;
-  border-radius:50%;
-  background:#00e0ff;
-  display:inline-block;
+  width: 80px; height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: #00e0ff;
+  display: inline-block;
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0%,100% {transform: scale(1);}
-  50% {transform: scale(1.1);}
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .inputGroup { position: relative; margin: 2em auto; max-width: 220px; }
 .inputGroup input {
-  font-size: 16px; padding: 10px 10px 10px 5px;
-  width: 100%; border: none;
-  border-bottom: 2px solid #ccc; background: transparent;
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
   color: #fff;
 }
 .inputGroup label {
-  color: rgba(255,255,255,0.6); font-size: 16px;
-  position: absolute; left: 5px; top: 10px;
-  transition: 0.2s ease all; pointer-events: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  pointer-events: none;
 }
 .inputGroup input:focus ~ label,
 .inputGroup input:valid ~ label {
-  top: -10px; font-size: 12px; color: #00e0ff;
+  top: -10px;
+  font-size: 12px;
+  color: #00e0ff;
 }
 
 .btn {
   background: linear-gradient(135deg,#00e0ff,#0077d9);
-  border:none; color:#fff;
-  padding:14px 24px; font-size:1rem;
-  border-radius:12px; margin:10px 5px;
-  cursor:pointer;
+  border: none;
+  color: #fff;
+  padding: 14px 24px;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin: 10px 5px;
+  cursor: pointer;
   box-shadow: 0 4px 20px rgba(0,224,255,0.4);
   transition: all 0.2s;
 }
-.btn:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(0,224,255,0.6); }
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(0,224,255,0.6);
+}
 
 .btnprv {
   background: linear-gradient(135deg,#5c426b,#5c426b);
-  border:none; color:#fff;
-  padding:14px 24px; font-size:1rem;
-  border-radius:12px; margin:10px 5px;
-  cursor:pointer;
+  border: none;
+  color: #fff;
+  padding: 14px 24px;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin: 10px 5px;
+  cursor: pointer;
   box-shadow: 0 4px 20px rgba(0,224,255,0.4);
 }
-.btnprv:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(0,224,255,0.6); }
+.btnprv:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(0,224,255,0.6);
+}
 
-.message { margin-top:10px; color:#ff6b6b; font-weight:bold; display:none; }
+.message { margin-top: 10px; color: #ff6b6b; font-weight: bold; display: none; }
 
+/* Team Section */
 .team-section { margin-top: 25px; text-align: center; }
 .team-section h3 { color: #00e0ff; margin-bottom: 15px; }
-
 .team { display: flex; justify-content: center; flex-wrap: wrap; }
-
 .member {
   background: rgba(255,255,255,0.05);
   padding: 15px 10px;
@@ -129,19 +136,18 @@ body {
 .member strong { display: block; color: #00e0ff; margin-bottom: 5px; font-size: 1.1rem; }
 .member span { font-size: 0.85rem; opacity: 0.85; }
 
-/* Logout button styled like Uiverse login button */
+/* Logout Button */
 .user-profile {
   width: 131px; height: 51px; border-radius: 15px;
   cursor: pointer; transition: 0.3s ease;
   background: linear-gradient(to bottom right,#2e8eff 0%,rgba(46,142,255,0) 30%);
-  background-color: rgba(46, 142, 255, 0.2);
   display: flex; align-items: center; justify-content: center;
   margin: 20px auto 0 auto;
 }
 .user-profile:hover,
 .user-profile:focus {
-  background-color: rgba(46, 142, 255, 0.7);
-  box-shadow: 0 0 10px rgba(46, 142, 255, 0.5);
+  background-color: rgba(46,142,255,0.7);
+  box-shadow: 0 0 10px rgba(46,142,255,0.5);
   outline: none;
 }
 .user-profile-inner {
@@ -149,24 +155,215 @@ body {
   background-color: #1a1a1a; display: flex; align-items: center;
   justify-content: center; gap: 15px; color: #fff; font-weight: 600;
 }
-.user-profile-inner svg {
-  width: 27px; height: 27px; fill: #fff;
+.user-profile-inner svg { width: 27px; height: 27px; fill: #fff; }
+
+/* User Selection Cards */
+#userSelectScreen { text-align: center; }
+#userSelectScreen h2 { margin-bottom: 20px; color: #00e0ff; }
+
+/* User Card Styling */
+.user-card {
+  width: 280px;
+  height: 280px;
+  background: rgba(0, 30, 60, 0.85);      /* dark blue, semi-transparent */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: inline-block;
+  margin: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 5px 25px rgba(0, 224, 255, 0.4); /* neon blue shadow */
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
+
+.user-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 224, 255, 0.6);
+  background: rgba(0, 40, 80, 0.9);      /* slightly lighter blue on hover */
+}
+
+/* Top border for neon accent */
+.user-card .card-border-top {
+  width: 60%;
+  height: 6px;
+  background: #00e0ff;                   /* neon blue */
+  margin: 10px auto 15px auto;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Profile image */
+.user-card .img {
+  width: 90px;
+  height: 100px;
+  border-radius: 15px;          /* keep rounded rectangle corners */
+  margin: 10px auto 0 auto;
+  object-fit: cover;            /* ensures image fills the box nicely */
+  display: block;
+  background-color: #0077d9;     /* fallback color */
+  border: 2px solid #00e0ff;     /* optional neon border */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Name and Job */
+.user-card span {
+  display: block;
+  color: #00e0ff;                        /* neon text for name */
+  font-weight: 600;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.user-card .job {
+  color: #a0e0ff;                        /* lighter neon for job title */
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Uiverse-style button for user cards */
+.user-card button {
+  background: #00e0ff;          /* neon blue to match site */
+  color: #0d324d;               /* dark text for contrast */
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0.35em 1.2em;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+  box-shadow: inset 0 0 1.6em -0.6em #0077d9;
+  transition: all 0.3s;
+
+  margin: 10px auto 0 auto;    /* CENTER button horizontally */
+}
+
+
+.user-card button .icon {
+  background: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #00b3e6;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.user-card button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.user-card button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #00b3e6;
+}
+
+.user-card button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.user-card button:active .icon {
+  transform: scale(0.95);
+}
+
+
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
-<div class="card" id="loginCard">
-  <div class="logo"></div>
-  <h2>Enter Your Name</h2>
+<div id="userSelectScreen">
+  <h2>Select Your Profile</h2>
 
-  <div class="inputGroup">
-    <input type="text" id="username" required autocomplete="off">
-    <label for="username">Name</label>
+  <!-- Coach on top -->
+  <div class="user-card" data-user="hamada">
+    <div class="card-border-top"></div>
+    <img class="img" src="https://i.ibb.co/rGv2q2q5/IMG-20251121-WA0027-1-1.jpg" alt="Hamada Elsaid">
+    <span>Hamada Elsaid</span>
+    <p class="job">Coach / Teacher</p>
+    <button class="cssbuttons-io-button">
+      Select
+      <div class="icon">
+        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+        </svg>
+      </div>
+    </button>
   </div>
 
-  <button class="btn" id="submitBtn">Continue</button>
+  <!-- Regular users -->
+  <div class="user-card" data-user="amir">
+    <div class="card-border-top"></div>
+    <img class="img" src="https://i.ibb.co/N2xbmCGw/Amir-majdi-alomari.jpg" alt="Amir">
+    <span>Amir Majdi</span>
+    <p class="job">Leader & Developer</p>
+    <button class="cssbuttons-io-button">
+      Select
+      <div class="icon">
+        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+        </svg>
+      </div>
+    </button>
+  </div>
+
+  <div class="user-card" data-user="baraa">
+    <div class="card-border-top"></div>
+    <img class="img" src="https://i.ibb.co/8g2vKpV3/Baraa-picture.jpg" alt="Baraa">
+    <span>Baraa Mohamed</span>
+    <p class="job">Builder & Programmer</p>
+    <button class="cssbuttons-io-button">
+      Select
+      <div class="icon">
+        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+        </svg>
+      </div>
+    </button>
+  </div>
+
+  <div class="user-card" data-user="abdulrahman">
+    <div class="card-border-top"></div>
+    <img class="img" src="https://i.ibb.co/Xx9s6pF/abdulrahman.png" alt="Abdulrahman">
+    <span>Abdulrahman</span>
+    <p class="job">Builder & Programmer</p>
+    <button class="cssbuttons-io-button">
+      Select
+      <div class="icon">
+        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+        </svg>
+      </div>
+    </button>
+  </div>
+
+</div>
+
+
+
+<!-- PASSWORD LOGIN -->
+<div class="card" id="loginCard" style="display:none;">
+  <div class="logo"></div>
+  <h2>Enter Password</h2>
+  <div class="inputGroup">
+    <input type="password" id="passwordInput" required autocomplete="off">
+    <label for="passwordInput">Password</label>
+  </div>
+  <button class="btn" id="loginBtn">Login</button>
   <div class="message" id="errorMsg">Access Denied!</div>
 </div>
 
@@ -182,29 +379,27 @@ body {
       <button class="btn siteBtn" data-site="https://trellis3d.co/online-viewer/glb">Trellis 3D Viewer</button>
       <button class="btn siteBtn" data-site="https://limewire.com/d/C2QMh#g3lpjQAqxS">3D Models</button>
       <button class="btn siteBtn" data-site="https://youtu.be/RN-UyJbe_yg">VEX IQ YouTube</button>
-      <button class="btnprv siteBtn" data-site="gofile">Gofile Download (A3 Only)</button>
+      <button class="btnprv siteBtn admin-only" data-site="gofile">Gofile Download (A3 Only)</button>
     </div>
   </div>
 
-  <div class="team-section">
-    <h3>Team Members</h3>
-    <div class="team">
-      <div class="member">
-        <strong>Amir Majdi Alomari</strong>
-        <span>Leader & Developer</span>
-      </div>
-      <div class="member">
-        <strong>Baraa Mohamed Hashem</strong>
-        <span>Builder & Programmer</span>
-      </div>
-      <div class="member">
-        <strong>Abdulrahman Mohammed Abdulstar</strong>
-        <span>Builder & Programmer</span>
-      </div>
+ <div class="team-section">
+  <h3>Team Members</h3>
+  <div class="team">
+    <!-- Coach first -->
+    <div class="member">
+      <strong>Hamada Elsaid</strong>
+      <span>Coach / Teacher</span>
     </div>
-  </div>
 
-  <!-- Logout button (Uiverse style) -->
+    <!-- Team members -->
+    <div class="member"><strong>Amir Majdi Alomari</strong><span>Leader & Developer</span></div>
+    <div class="member"><strong>Baraa Mohamed Hashem</strong><span>Builder & Programmer</span></div>
+    <div class="member"><strong>Abdulrahman Mohammed Abdulstar</strong><span>Builder & Programmer</span></div>
+  </div>
+</div>
+
+  <!-- Logout -->
   <div aria-label="Logout Button" tabindex="0" role="button" class="user-profile" id="logoutBtn">
     <div class="user-profile-inner">
       <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -218,58 +413,68 @@ body {
 </div>
 
 <script>
-const allowedNames = ["baraa","a3/","hamani"];
-const fullAccessName = "a3/";
-const gofilePassword = "a3";
+const userPasswords = {
+  hamada: "h",    // Hamada's password
+  amir: "a3!!",
+  baraa: "b",
+  abdulrahman: "abd"
+};
 
-const loginCard = document.getElementById("loginCard");
-const launcherCard = document.getElementById("launcherCard");
+let selectedUser = "";
 
-document.getElementById('submitBtn').onclick = validateName;
-document.getElementById('username').addEventListener('keydown', e => {
-  if(e.key === 'Enter'){ e.preventDefault(); validateName(); }
+// --- User Selection ---
+document.querySelectorAll(".user-card button").forEach(btn => {
+  btn.onclick = () => {
+    selectedUser = btn.parentElement.dataset.user;
+    document.getElementById("userSelectScreen").style.display = "none";
+    document.getElementById("loginCard").style.display = "block";
+  };
 });
 
-function validateName() {
-  const name = document.getElementById('username').value.trim().toLowerCase();
-  if(allowedNames.includes(name)){
-    document.getElementById('userDisplay').textContent =
-      name.charAt(0).toUpperCase() + name.slice(1);
-
-    loginCard.style.display = "none";
-    launcherCard.style.display = "block";
-
-    setupButtons(name);
+// --- Password Login ---
+function login() {
+  const password = document.getElementById("passwordInput").value;
+  if(password === userPasswords[selectedUser]) {
+    document.getElementById("userDisplay").textContent = selectedUser.charAt(0).toUpperCase() + selectedUser.slice(1);
+    document.getElementById("loginCard").style.display = "none";
+    document.getElementById("launcherCard").style.display = "block";
+    setupButtons();
   } else {
-    const errorMsg = document.getElementById('errorMsg');
-    errorMsg.style.display = 'block';
+    const errorMsg = document.getElementById("errorMsg");
+    errorMsg.style.display = "block";
     setTimeout(()=> errorMsg.style.display='none',2000);
   }
 }
 
-function setupButtons(name){
-  const buttons = document.querySelectorAll('.siteBtn');
+// ENTER key triggers login
+document.getElementById("passwordInput").addEventListener("keypress", function(e){
+  if(e.key === "Enter") login();
+});
 
-  buttons.forEach(btn=>{
+// --- Setup Buttons ---
+function setupButtons(){
+  const buttons = document.querySelectorAll(".siteBtn");
+
+  buttons.forEach(btn => {
     const site = btn.dataset.site;
 
-    if(name !== fullAccessName){
+    // Non-Amir restrictions
+    if(selectedUser !== "amir"){
       if(site !== "https://theknrc.com/" && site !== "https://youtu.be/RN-UyJbe_yg"){
         btn.style.display = "none";
       }
     }
 
     btn.onclick = () => {
-      if(site === "gofile") openGofile(name);
+      if(site === "gofile") openGofile();
       else window.open(site, "_blank");
     };
   });
 
   document.getElementById("openAll").onclick = () => {
-    if(name === fullAccessName){
-      buttons.forEach(btn=>{
-        if(btn.dataset.site === "gofile") openGofile(name);
-        else if(btn.style.display !== "none") window.open(btn.dataset.site, "_blank");
+    if(selectedUser === "amir"){
+      buttons.forEach(btn => {
+        if(btn.style.display !== "none") btn.click();
       });
     } else {
       window.open("https://theknrc.com/", "_blank");
@@ -278,26 +483,28 @@ function setupButtons(name){
   };
 }
 
-function openGofile(name){
-  if(name !== fullAccessName){
+// --- Gofile ---
+function openGofile(){
+  if(selectedUser !== "amir"){
     alert("Access Denied!");
     return;
   }
   const pw = prompt("Enter password to access Gofile:");
-  if(pw === gofilePassword) window.open("https://gofile.io/d/5o4XeI","_blank");
+  if(pw === "amir123") window.open("https://gofile.io/d/5o4XeI","_blank");
   else alert("Incorrect password!");
 }
 
-// Logout button with fade out
+// --- Logout ---
 document.getElementById("logoutBtn").onclick = () => {
-  launcherCard.style.animation = "fadeOut 0.5s forwards";
+  document.getElementById("launcherCard").style.animation = "fadeOut 0.5s forwards";
   setTimeout(()=>{
-    launcherCard.style.display = "none";
-    loginCard.style.display = "block";
-    launcherCard.style.animation = "fadeIn 0.8s forwards";
+    document.getElementById("launcherCard").style.display = "none";
+    document.getElementById("userSelectScreen").style.display = "block";
+    document.getElementById("loginCard").style.display = "none";
+    document.getElementById("launcherCard").style.animation = "fadeIn 0.8s forwards";
+    document.getElementById("passwordInput").value = "";
   }, 500);
 };
 </script>
-
 </body>
 </html>
