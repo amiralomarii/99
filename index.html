@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KNRC X Alnajat</title> 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="https://i.ibb.co/vCF5tR84/download-20.png">
+
 <style>
 body {
   font-family: 'Inter', sans-serif;
@@ -18,6 +18,7 @@ body {
   margin:0;
   color:white;
 }
+
 .card {
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(15px);
@@ -28,8 +29,21 @@ body {
   width:90%;
   box-shadow:0 8px 32px rgba(0,0,0,0.7);
   transition: transform 0.3s;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
 }
 .card:hover { transform: translateY(-5px) scale(1.02); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+
 .logo {
   width:80px;
   height:80px;
@@ -43,96 +57,110 @@ body {
   0%,100% {transform: scale(1);}
   50% {transform: scale(1.1);}
 }
-.inputGroup {
-  position: relative;
-  margin: 2em auto;
-  max-width: 220px;
-}
+
+.inputGroup { position: relative; margin: 2em auto; max-width: 220px; }
 .inputGroup input {
-  font-size: 16px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  background: transparent;
+  font-size: 16px; padding: 10px 10px 10px 5px;
+  width: 100%; border: none;
+  border-bottom: 2px solid #ccc; background: transparent;
   color: #fff;
 }
 .inputGroup label {
-  color: rgba(255,255,255,0.6);
-  font-size: 16px;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
+  color: rgba(255,255,255,0.6); font-size: 16px;
+  position: absolute; left: 5px; top: 10px;
+  transition: 0.2s ease all; pointer-events: none;
 }
 .inputGroup input:focus ~ label,
 .inputGroup input:valid ~ label {
-  top: -10px;
-  font-size: 12px;
-  color: #00e0ff;
+  top: -10px; font-size: 12px; color: #00e0ff;
 }
+
 .btn {
   background: linear-gradient(135deg,#00e0ff,#0077d9);
-  border:none;
-  color:#fff;
-  padding:14px 24px;
-  font-size:1rem;
-  border-radius:12px;
-  margin:10px 5px;
+  border:none; color:#fff;
+  padding:14px 24px; font-size:1rem;
+  border-radius:12px; margin:10px 5px;
   cursor:pointer;
   box-shadow: 0 4px 20px rgba(0,224,255,0.4);
   transition: all 0.2s;
 }
 .btn:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(0,224,255,0.6); }
+
 .btnprv {
   background: linear-gradient(135deg,#5c426b,#5c426b);
-  border:none;
-  color:#fff;
-  padding:14px 24px;
-  font-size:1rem;
-  border-radius:12px;
-  margin:10px 5px;
+  border:none; color:#fff;
+  padding:14px 24px; font-size:1rem;
+  border-radius:12px; margin:10px 5px;
   cursor:pointer;
   box-shadow: 0 4px 20px rgba(0,224,255,0.4);
-  transition: all 0.2s;
 }
 .btnprv:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(0,224,255,0.6); }
+
 .message { margin-top:10px; color:#ff6b6b; font-weight:bold; display:none; }
+
 .team-section { margin-top: 25px; text-align: center; }
 .team-section h3 { color: #00e0ff; margin-bottom: 15px; }
+
 .team { display: flex; justify-content: center; flex-wrap: wrap; }
+
 .member {
   background: rgba(255,255,255,0.05);
   padding: 15px 10px;
   border-radius: 12px;
   margin: 5px;
-  min-width: 140px;
+  min-width: 160px;
   transition: transform 0.2s, box-shadow 0.2s;
-  cursor: default;
 }
 .member:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,224,255,0.5); }
-.member strong { display: block; color: #00e0ff; margin-bottom: 5px; }
+.member strong { display: block; color: #00e0ff; margin-bottom: 5px; font-size: 1.1rem; }
+.member span { font-size: 0.85rem; opacity: 0.85; }
+
+/* Logout button styled like Uiverse login button */
+.user-profile {
+  width: 131px; height: 51px; border-radius: 15px;
+  cursor: pointer; transition: 0.3s ease;
+  background: linear-gradient(to bottom right,#2e8eff 0%,rgba(46,142,255,0) 30%);
+  background-color: rgba(46, 142, 255, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 20px auto 0 auto;
+}
+.user-profile:hover,
+.user-profile:focus {
+  background-color: rgba(46, 142, 255, 0.7);
+  box-shadow: 0 0 10px rgba(46, 142, 255, 0.5);
+  outline: none;
+}
+.user-profile-inner {
+  width: 127px; height: 47px; border-radius: 13px;
+  background-color: #1a1a1a; display: flex; align-items: center;
+  justify-content: center; gap: 15px; color: #fff; font-weight: 600;
+}
+.user-profile-inner svg {
+  width: 27px; height: 27px; fill: #fff;
+}
 </style>
 </head>
 <body>
 
+<!-- LOGIN -->
 <div class="card" id="loginCard">
   <div class="logo"></div>
   <h2>Enter Your Name</h2>
+
   <div class="inputGroup">
-    <input type="text" id="username" required autocomplete="off" placeholder="">
+    <input type="text" id="username" required autocomplete="off">
     <label for="username">Name</label>
   </div>
+
   <button class="btn" id="submitBtn">Continue</button>
   <div class="message" id="errorMsg">Access Denied!</div>
 </div>
 
+<!-- MAIN LAUNCHER -->
 <div class="card" id="launcherCard" style="display:none;">
   <h2>Welcome <span id="userDisplay"></span> 🎉</h2>
   <p>Open your tools:</p>
-  
+
   <div id="buttonsContainer">
     <button class="btn" id="openAll">Open All Websites</button>
     <div>
@@ -147,77 +175,93 @@ body {
   <div class="team-section">
     <h3>Team Members</h3>
     <div class="team">
-      <div class="member"><strong>Amir Majdi Alomari</strong></div>
-      <div class="member"><strong>Baraa Mohamed Hashem</strong></div>
-      <div class="member"><strong>Abdulrahman Mohammed AbdulSattar</strong></div>
+      <div class="member">
+        <strong>Amir Majdi Alomari</strong>
+        <span>Leader & Developer</span>
+      </div>
+      <div class="member">
+        <strong>Baraa Mohamed Hashem</strong>
+        <span>Builder & Programmer</span>
+      </div>
+      <div class="member">
+        <strong>Abdulrahman Mohammed AbdulSattar</strong>
+        <span>Builder & Programmer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout button (Uiverse style) -->
+  <div aria-label="Logout Button" tabindex="0" role="button" class="user-profile" id="logoutBtn">
+    <div class="user-profile-inner">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <g data-name="Layer 2" id="Layer_2">
+          <path d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"></path>
+        </g>
+      </svg>
+      <p>Log Out</p>
     </div>
   </div>
 </div>
 
 <script>
-const allowedNames = ["baraa","amir","hamani"];
-const fullAccessName = "amir"; // only Amir gets full access
+const allowedNames = ["baraa","a3/","hamani"];
+const fullAccessName = "a3/";
 const gofilePassword = "a3";
 
-const submitBtn = document.getElementById('submitBtn');
-const username = document.getElementById('username');
-const errorMsg = document.getElementById('errorMsg');
-const loginCard = document.getElementById('loginCard');
-const launcherCard = document.getElementById('launcherCard');
-const userDisplay = document.getElementById('userDisplay');
+const loginCard = document.getElementById("loginCard");
+const launcherCard = document.getElementById("launcherCard");
 
-function validateName() {
-  const name = username.value.trim().toLowerCase();
-  if(allowedNames.includes(name)){
-    userDisplay.textContent = name.charAt(0).toUpperCase() + name.slice(1);
-    loginCard.style.display = 'none';
-    launcherCard.style.display = 'block';
-    setupButtons(name);
-  } else {
-    errorMsg.style.display = 'block';
-    setTimeout(()=>{ errorMsg.style.display='none'; },2000);
-  }
-}
-
-submitBtn.addEventListener('click', validateName);
-username.addEventListener('keydown', (e)=>{
+document.getElementById('submitBtn').onclick = validateName;
+document.getElementById('username').addEventListener('keydown', e => {
   if(e.key === 'Enter'){ e.preventDefault(); validateName(); }
 });
 
+function validateName() {
+  const name = document.getElementById('username').value.trim().toLowerCase();
+  if(allowedNames.includes(name)){
+    document.getElementById('userDisplay').textContent =
+      name.charAt(0).toUpperCase() + name.slice(1);
+
+    loginCard.style.display = "none";
+    launcherCard.style.display = "block";
+
+    setupButtons(name);
+  } else {
+    const errorMsg = document.getElementById('errorMsg');
+    errorMsg.style.display = 'block';
+    setTimeout(()=> errorMsg.style.display='none',2000);
+  }
+}
+
 function setupButtons(name){
   const buttons = document.querySelectorAll('.siteBtn');
+
   buttons.forEach(btn=>{
     const site = btn.dataset.site;
+
     if(name !== fullAccessName){
-      // Only KNRC + VEX IQ YouTube for other members
       if(site !== "https://theknrc.com/" && site !== "https://youtu.be/RN-UyJbe_yg"){
         btn.style.display = "none";
       }
     }
 
-    btn.addEventListener('click', ()=>{
-      if(site === "gofile"){
-        openGofile(name);
-      } else {
-        window.open(site, '_blank');
-      }
-    });
+    btn.onclick = () => {
+      if(site === "gofile") openGofile(name);
+      else window.open(site, "_blank");
+    };
   });
 
-  document.getElementById('openAll').addEventListener('click', ()=>{
+  document.getElementById("openAll").onclick = () => {
     if(name === fullAccessName){
       buttons.forEach(btn=>{
-        if(btn.dataset.site === "gofile"){
-          openGofile(name);
-        } else {
-          window.open(btn.dataset.site, '_blank');
-        }
+        if(btn.dataset.site === "gofile") openGofile(name);
+        else if(btn.style.display !== "none") window.open(btn.dataset.site, "_blank");
       });
     } else {
-      window.open("https://theknrc.com/", '_blank');
-      window.open("https://youtu.be/RN-UyJbe_yg", '_blank');
+      window.open("https://theknrc.com/", "_blank");
+      window.open("https://youtu.be/RN-UyJbe_yg", "_blank");
     }
-  });
+  };
 }
 
 function openGofile(name){
@@ -226,12 +270,19 @@ function openGofile(name){
     return;
   }
   const pw = prompt("Enter password to access Gofile:");
-  if(pw === gofilePassword){
-    window.open('https://gofile.io/d/5o4XeI', '_blank');
-  } else {
-    alert("Incorrect password!");
-  }
+  if(pw === gofilePassword) window.open("https://gofile.io/d/5o4XeI","_blank");
+  else alert("Incorrect password!");
 }
+
+// Logout button with fade out
+document.getElementById("logoutBtn").onclick = () => {
+  launcherCard.style.animation = "fadeOut 0.5s forwards";
+  setTimeout(()=>{
+    launcherCard.style.display = "none";
+    loginCard.style.display = "block";
+    launcherCard.style.animation = "fadeIn 0.8s forwards";
+  }, 500);
+};
 </script>
 
 </body>
