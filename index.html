@@ -1,700 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-  <!-- Title & Description -->
-  <title>99 | ٩٩ ™ | Server Website</title>
-  <meta name="title" content="99 | ٩٩ ™ | Server Website" />
-  <meta name="description" content="The Community To Be — Developed by A3." />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/a3clinic/99/blob/main/99%20(1).png?raw=true">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/a3clinic/99/blob/main/99%20(1).png?raw=true">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alrab3.xyz" />
-  <meta property="og:title" content="99 | ٩٩ ™ | Server Website" />
-  <meta property="og:description" content="The Community To Be — Developed by A3." />
-  <meta property="og:image" content="https://github.com/a3clinic/99/blob/main/99%20(1).png?raw=true" />
-
-  <!-- Twitter Card -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://alrab3.xyz" />
-  <meta property="twitter:title" content="99 | ٩٩ ™ | Server Website" />
-  <meta property="twitter:description" content="The Community To Be — Developed by A3." />
-  <meta property="twitter:image" content="https://github.com/a3clinic/99/blob/main/99%20(1).png?raw=true" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
-
-  <style>
-    :root{
-      --bg:#0b1020; --card:#0f1724; --muted:#98a0b3; --accent:#5865F2; --glass: rgba(255,255,255,0.04);
-      --radius:16px; --glass-2: rgba(255,255,255,0.02);
-    }
-    [data-theme="light"]{
-      --bg:#f6f8fb; --card:#ffffff; --muted:#56606f; --accent:#5865F2; --glass: rgba(0,0,0,0.04); --glass-2: rgba(0,0,0,0.02);
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--muted);background:radial-gradient(1200px 600px at 10% 10%, rgba(88,101,242,0.06), transparent), radial-gradient(900px 400px at 95% 90%, rgba(67,181,129,0.03), transparent), var(--bg);-webkit-font-smoothing:antialiased}
-
-    header{position:fixed;left:0;right:0;top:14px;display:flex;justify-content:center;pointer-events:none;z-index:100}
-    .nav{width:1100px;max-width:calc(100% - 40px);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:14px;padding:8px 12px;display:flex;gap:12px;align-items:center;justify-content:space-between;box-shadow:0 6px 30px var(--glass-2);backdrop-filter: blur(6px);pointer-events:auto}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:10px;overflow:hidden;flex:0 0 44px}
-    .logo img{width:100%;height:100%;object-fit:cover;display:block}
-    .brand h1{margin:0;font-size:15px;color:var(--muted);font-weight:700}
-    .nav-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .nav a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600}
-    .nav a.cta{background:linear-gradient(90deg,var(--accent),#4154d8);color:white;box-shadow:0 6px 20px rgba(88,101,242,0.14)}
-
-    main{min-height:100vh;display:grid;place-items:center;padding:88px 20px 120px}
-
-    .layout{width:1100px;max-width:1200px;display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start}
-
-    /* left card */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);padding:22px;border:1px solid var(--glass);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-    .server-header{display:flex;gap:14px;align-items:center}
-    .server-avatar{width:86px;height:86px;border-radius:18px;overflow:hidden;flex:0 0 86px;border:1px solid var(--glass-2)}
-    .server-avatar img{width:100%;height:100%;object-fit:cover}
-    .server-meta h2{margin:0;font-size:20px;color:white}
-    .server-meta p{margin:4px 0 0;font-size:13px;color:var(--muted)}
-    .status{margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,var(--glass),transparent);color:var(--muted);font-weight:700;font-size:13px;border:1px solid var(--glass-2)}
-
-    .big-stats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .stat{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:12px;text-align:center;min-width:90px}
-    .stat h3{margin:0;color:white;font-size:18px}
-    .stat p{margin:6px 0 0;font-size:13px}
-
-    .avatars{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-    .avatar{width:44px;height:44px;border-radius:10px;overflow:hidden;border:1px solid var(--glass-2)}
-    .avatar img{width:100%;height:100%;object-fit:cover}
-
-    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .btn{padding:10px 14px;border-radius:10px;border:0;background:var(--card);color:var(--muted);cursor:pointer;font-weight:700}
-    .btn.secondary{background:transparent;border:1px solid var(--glass);}
-    .btn.join{background:linear-gradient(90deg,var(--accent),#4752c4);color:#fff;box-shadow:0 8px 30px rgba(88,101,242,0.18)}
-
-    /* right content */
-    .right{display:flex;flex-direction:column;gap:18px}
-    .panel{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid var(--glass)}
-    .panel h3{margin:0 0 10px 0;color:white}
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .feature{padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);border:1px solid var(--glass-2)}
-
-    .rules{line-height:1.5;color:var(--muted)}
-
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-
-    /* particles canvas */
-    #bg-canvas{position:fixed;inset:0;z-index:-1}
-
-    /* theme toggle */
-    .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-2)}
-
-    /* responsive fixes */
-    @media (max-width:1200px){
-      .layout{grid-template-columns:1fr; width:95%}
-      .nav{width:95%}
-    }
-
-    @media (max-width:768px){
-      .nav-links{flex-wrap:wrap; justify-content:flex-end;}
-      .layout{grid-template-columns:1fr; gap:20px;}
-      .features{grid-template-columns:1fr}
-      .big-stats{flex-direction:column;align-items:center;}
-      .server-header{flex-direction:column;align-items:center;text-align:center;}
-      .status{justify-content:center}
-      .controls{justify-content:center}
-      .panel{padding:14px}
-    }
-
-    @media (max-width:480px){
-      .nav{padding:6px 8px; gap:6px;}
-      .brand h1{display:none}
-      main{padding:100px 12px 120px}
-      .avatars .avatar{width:36px;height:36px}
-      .server-avatar{width:72px;height:72px;flex:0 0 72px}
-      .stat{padding:10px;font-size:12px;}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KNRC X Alnajat</title> 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://i.ibb.co/vCF5tR84/download-20.png">
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #091921, #0d324d);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+  color:white;
+}
+.card {
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(15px);
+  border-radius:20px;
+  padding:40px;
+  text-align:center;
+  max-width:480px;
+  width:90%;
+  box-shadow:0 8px 32px rgba(0,0,0,0.7);
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px) scale(1.02); }
+.logo {
+  width:80px;
+  height:80px;
+  margin-bottom:20px;
+  border-radius:50%;
+  background:#00e0ff;
+  display:inline-block;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+}
+.inputGroup {
+  position: relative;
+  margin: 2em auto;
+  max-width: 220px;
+}
+.inputGroup input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  color: #fff;
+}
+.inputGroup label {
+  color: rgba(255,255,255,0.6);
+  font-size: 16px;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+.inputGroup input:focus ~ label,
+.inputGroup input:valid ~ label {
+  top: -10px;
+  font-size: 12px;
+  color: #00e0ff;
+}
+.btn {
+  background: linear-gradient(135deg,#00e0ff,#0077d9);
+  border:none;
+  color:#fff;
+  padding:14px 24px;
+  font-size:1rem;
+  border-radius:12px;
+  margin:10px 5px;
+  cursor:pointer;
+  box-shadow: 0 4px 20px rgba(0,224,255,0.4);
+  transition: all 0.2s;
+}
+.btn:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(0,224,255,0.6); }
+.btnprv {
+  background: linear-gradient(135deg,#5c426b,#5c426b);
+  border:none;
+  color:#fff;
+  padding:14px 24px;
+  font-size:1rem;
+  border-radius:12px;
+  margin:10px 5px;
+  cursor:pointer;
+  box-shadow: 0 4px 20px rgba(0,224,255,0.4);
+  transition: all 0.2s;
+}
+.btnprv:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(0,224,255,0.6); }
+.message { margin-top:10px; color:#ff6b6b; font-weight:bold; display:none; }
+.team-section { margin-top: 25px; text-align: center; }
+.team-section h3 { color: #00e0ff; margin-bottom: 15px; }
+.team { display: flex; justify-content: center; flex-wrap: wrap; }
+.member {
+  background: rgba(255,255,255,0.05);
+  padding: 15px 10px;
+  border-radius: 12px;
+  margin: 5px;
+  min-width: 140px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.member:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,224,255,0.5); }
+.member strong { display: block; color: #00e0ff; margin-bottom: 5px; }
+</style>
 </head>
 <body>
-  <canvas id="bg-canvas"></canvas>
 
-  <header>
-    <nav class="nav" role="navigation" aria-label="Top navigation">
-      <div class="brand">
-        <div class="logo"><img src="https://i.ibb.co/ds0YkjDB/99-1.png" alt="Server Logo"></div>
-        <div>
-          <h1 id="site-title">99 | ٩٩ ™</h1>
-          <div style="font-size:12px;color:var(--muted);">Your #1 Community</div>
-        </div>
-      </div>
+<div class="card" id="loginCard">
+  <div class="logo"></div>
+  <h2>Enter Your Name</h2>
+  <div class="inputGroup">
+    <input type="text" id="username" required autocomplete="off" placeholder="">
+    <label for="username">Name</label>
+  </div>
+  <button class="btn" id="submitBtn">Continue</button>
+  <div class="message" id="errorMsg">Access Denied!</div>
+</div>
 
-      <div class="nav-links">
-        <a href="#rules">Rules</a>
-        <a href="#members">Members</a>
-        <button id="themeBtn" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌙 Toggle</button>
-        <a id="inviteBtnTop" class="cta" href="#" target="_blank">Join</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <div class="layout">
-
-      <section class="card" aria-labelledby="server-title">
-        <div class="server-header">
-          <div class="server-avatar"><img id="serverIcon" src="https://i.ibb.co/ds0YkjDB/99-1.png" alt="Server Avatar"></div>
-          <div class="server-meta">
-            <h2 id="server-title">Loading server...</h2>
-            <p id="server-desc">A welcoming community — loading info.</p>
-            <div class="status"><div class="pill" id="presence">• 0 online</div><div class="pill" id="total">• 0 members</div></div>
-          </div>
-        </div>
-
-        <div class="big-stats">
-          <div class="stat"><h3 id="stat1">—</h3><p>Online Now</p></div>
-        <div class="stat"><h3 id="stat2">114+</h3><p>Total Members</p></div>
-          <div class="stat"><h3 id="stat3">—</h3><p>Channels</p></div>
-        </div>
-
-        <div class="avatars" id="avatars" aria-live="polite" aria-label="Online members avatars">
-          <!-- avatars loaded by JS -->
-        </div>
-
-        <div class="controls">
-          <button class="btn join" id="joinBtn">Join Server</button>
-          <button class="btn secondary" id="copyInvite">Copy Invite</button>
-          <button class="btn" id="openWidget">See Voice Chats</button>
-          <button class="btn" id="refreshBtn">Refresh</button>
-        </div>
-
-      </section>
-
-      <section class="right">
-
-        <div class="panel">
-          <h3 id="rules">Server Rules</h3>
-          <div class="rules">
-            <ol>
-              <li>Be respectful and kind — no harassment.</li>
-              <li>No spam, advertising, or scamming.</li>
-              <li>Keep channels on-topic and use the correct channels.</li>
-              <li>Follow Discord's Terms of Service.</li>
-              <li>If you need help, ping the moderators.</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="panel" id="members">
-          <h3>Members</h3>
-          <div id="membersGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-top:10px"></div>
-          <footer>Built By A3 ⚙️| 2025. </footer>
-        </div>
-
-      </section>
-
-    </div>
-  </main>
-
-  <!-- lightweight modal for rules/join -->
-  <div id="modal" role="dialog" aria-hidden="true" style="position:fixed;inset:0;display:none;place-items:center;padding:20px;z-index:60">
-    <div style="max-width:760px;width:100%;background:var(--card);border-radius:14px;padding:20px;border:1px solid var(--glass);box-shadow:0 30px 80px rgba(2,6,23,0.6)">
-      <h2 id="modalTitle">Invite</h2>
-      <p id="modalContent">Click below to join the server.</p>
-      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px">
-        <button id="modalClose" class="btn secondary">Close</button>
-        <a id="modalJoin" class="btn join" href="#" target="_blank">Join Server</a>
-      </div>
+<div class="card" id="launcherCard" style="display:none;">
+  <h2>Welcome <span id="userDisplay"></span> 🎉</h2>
+  <p>Open your tools:</p>
+  
+  <div id="buttonsContainer">
+    <button class="btn" id="openAll">Open All Websites</button>
+    <div>
+      <button class="btn siteBtn" data-site="https://theknrc.com/">TheKNRC</button>
+      <button class="btn siteBtn" data-site="https://trellis3d.co/online-viewer/glb">Trellis 3D Viewer</button>
+      <button class="btn siteBtn" data-site="https://limewire.com/d/C2QMh#g3lpjQAqxS">3D Models</button>
+      <button class="btn siteBtn" data-site="https://youtu.be/RN-UyJbe_yg">VEX IQ YouTube</button>
+      <button class="btnprv siteBtn" data-site="gofile">Gofile Download (A3 Only)</button>
     </div>
   </div>
 
-  <!-- optional hidden iframe widget for users who want it -->
-  <iframe id="discordWidget" src="https://discord.com/widget?id=1264639881015988346&theme=dark" style="display:none;position:fixed;right:12px;bottom:12px;width:360px;height:480px;border-radius:12px;border:1px solid var(--glass);box-shadow:0 20px 60px rgba(2,6,23,0.6);z-index:50" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
-
-  <script>
-    // Config - change these to match your server
-    const GUILD_ID = '1264639881015988346';
-    const INVITE = 'https://discord.gg/gWfMxuJtEa'; // <-- replace with your invite or keep dynamic join
-
-    // Utilities
-    const qs = sel => document.querySelector(sel);
-    const $ = (s) => document.querySelector(s);
-
-    // Elements
-    const serverTitle = qs('#server-title');
-    const serverDesc = qs('#server-desc');
-    const presencePill = qs('#presence');
-    const totalPill = qs('#total');
-    const stat1 = qs('#stat1');
-    const stat2 = qs('#stat2');
-    const stat3 = qs('#stat3');
-    const avatarsBox = qs('#avatars');
-    const membersGrid = qs('#membersGrid');
-    const joinBtn = qs('#joinBtn');
-    const inviteBtnTop = qs('#inviteBtnTop');
-    const modal = qs('#modal');
-    const modalClose = qs('#modalClose');
-    const modalJoin = qs('#modalJoin');
-    const modalTitle = qs('#modalTitle');
-    const modalContent = qs('#modalContent');
-    const discordWidget = qs('#discordWidget');
-
-    // Theme toggle
-    const themeBtn = qs('#themeBtn');
-    const savedTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    themeBtn.textContent = savedTheme === 'light' ? '☀️ Light' : '🌙 Dark';
-    themeBtn.addEventListener('click', ()=>{
-      const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      const next = current === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
-      themeBtn.textContent = next === 'light' ? '☀️ Light' : '🌙 Dark';
-      localStorage.setItem('theme', next);
-    });
-
-    // Modal
-    function openModal(title, content, joinUrl){
-      modalTitle.textContent = title;
-      modalContent.textContent = content;
-      modalJoin.href = joinUrl || INVITE;
-      modal.style.display = 'grid';
-      modal.setAttribute('aria-hidden','false');
-    }
-    modalClose.addEventListener('click', ()=>{modal.style.display='none';modal.setAttribute('aria-hidden','true')});
-
-    // Copy invite
-    qs('#copyInvite').addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText(INVITE); alert('Invite copied to clipboard!'); }
-      catch(e){ prompt('Copy this invite', INVITE); }
-    });
-
-    // Join button
-    joinBtn.addEventListener('click', ()=> openModal('Join Server', 'You will be redirected to Discord to join the server.', INVITE));
-    inviteBtnTop.href = INVITE;
-    qs('#openWidget').addEventListener('click', ()=>{ discordWidget.style.display = discordWidget.style.display === 'none' ? 'block' : 'none' });
-
-   // Accurate Discord Data Fetcher
-// --- REPLACE fetchWidget() WITH THIS (robust, correct) ---
-async function fetchWidget(){
-  const widgetUrl = `https://discord.com/api/guilds/${GUILD_ID}/widget.json`;
-  const previewUrl = `https://discord.com/api/v9/guilds/${GUILD_ID}/preview`;
-
-  try {
-    // fetch widget + preview in parallel, but tolerate one failing
-    const [widgetRes, previewRes] = await Promise.allSettled([
-      fetch(widgetUrl, { cache: 'no-store' }),
-      fetch(previewUrl, { cache: 'no-store' })
-    ]);
-
-    // parse if fulfilled & ok, otherwise use empty object
-    const widgetData = (widgetRes.status === 'fulfilled' && widgetRes.value.ok) ? await widgetRes.value.json() : {};
-    const previewData = (previewRes.status === 'fulfilled' && previewRes.value.ok) ? await previewRes.value.json() : {};
-
-    // Prefer preview info for server name/description (preview is richer)
-    const serverName = previewData.name || widgetData.name || 'Discord Server';
-    const serverDescText = previewData.description ||
-      (Array.isArray(widgetData.channels) && widgetData.channels[0] ? `#${widgetData.channels[0].name} • Active community` : 'A welcoming community');
-
-    serverTitle.textContent = serverName;
-    serverDesc.textContent = serverDescText;
-    document.title = `${serverName} — Community`;
-
-    // --- CORRECT TOTAL vs ONLINE logic ---
-    // online: prefer preview.approximate_presence_count, fallback to widget.presence_count
-    const online = (typeof previewData.approximate_presence_count === 'number')
-      ? previewData.approximate_presence_count
-      : (typeof widgetData.presence_count === 'number' ? widgetData.presence_count : 0);
-
-    // total members: prefer preview.approximate_member_count (ACCURATE). Only fallback to widget.members.length if nothing else.
-    const total = (typeof previewData.approximate_member_count === 'number')
-      ? previewData.approximate_member_count
-      : (typeof widgetData.approximate_member_count === 'number'
-          ? widgetData.approximate_member_count
-          : (Array.isArray(widgetData.members) ? widgetData.members.length : 0));
-
-    // channels: prefer preview (if it contains channel info), otherwise widget channels count
-    const channels = (Array.isArray(previewData.channels) && previewData.channels.length)
-      ? previewData.channels.length
-      : (Array.isArray(widgetData.channels) ? widgetData.channels.length : '—');
-
-    // write to UI (human-readable formatting)
-    presencePill.textContent = `• ${online.toLocaleString()} online`;
-    totalPill.textContent = `• ${total.toLocaleString()} members`;
-    stat1.textContent = online.toLocaleString();
-    stat3.textContent = channels;
-
-    // Avatars (widget exposes sample members) - use safe property checks
-    avatarsBox.innerHTML = '';
-    if (Array.isArray(widgetData.members) && widgetData.members.length) {
-      widgetData.members.slice(0, 24).forEach(m => {
-        const a = document.createElement('div'); a.className = 'avatar';
-        const img = document.createElement('img');
-        img.src = m.avatar_url || m.avatar || (m.id && m.avatar ? `https://cdn.discordapp.com/avatars/${m.id}/${m.avatar}.png?size=128` : `https://cdn.discordapp.com/embed/avatars/${parseInt(m.discriminator || '0') % 5}.png`);
-        img.alt = m.username || 'member';
-        a.appendChild(img);
-        avatarsBox.appendChild(a);
-      });
-    } else {
-      // fallback placeholders
-      for (let i = 1; i <= 8; i++) {
-        const a = document.createElement('div'); a.className = 'avatar';
-        const img = document.createElement('img');
-        img.src = `https://picsum.photos/seed/discord${i}/80`;
-        img.alt = 'placeholder';
-        a.appendChild(img);
-        avatarsBox.appendChild(a);
-      }
-    }
-
-// Member grid preview (if widget provides members)
-membersGrid.innerHTML = '';
-if (Array.isArray(widgetData.members) && widgetData.members.length) {
-  membersGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(150px, 1fr))'; // flexible cells
-  widgetData.members.slice(0, 60).forEach(m => {
-    const el = document.createElement('div');
-    el.style.padding = '8px';
-    el.style.borderRadius = '10px';
-    el.style.display = 'flex';
-    el.style.alignItems = 'center';
-    el.style.gap = '8px';
-    el.style.background = 'linear-gradient(90deg, rgba(255,255,255,0.01), transparent)';
-    el.style.minWidth = '150px';
-    el.style.overflow = 'hidden';
-    
-    const img = document.createElement('img');
-    img.src = m.avatar_url || (m.id && m.avatar ? `https://cdn.discordapp.com/avatars/${m.id}/${m.avatar}.png?size=128` : `https://cdn.discordapp.com/embed/avatars/${parseInt(m.discriminator || '0') % 5}.png`);
-    img.width = 44; 
-    img.height = 44; 
-    img.style.borderRadius = '8px';
-    img.style.flexShrink = '0';
-
-    const meta = document.createElement('div');
-    meta.style.display = 'flex';
-    meta.style.alignItems = 'center';
-    meta.style.gap = '4px';
-    meta.style.overflow = 'hidden';
-
-    const nameDiv = document.createElement('div');
-    nameDiv.style.fontWeight = '700';
-    nameDiv.style.color = 'var(--muted)';
-    nameDiv.style.overflow = 'hidden';
-    nameDiv.style.textOverflow = 'ellipsis';
-    nameDiv.style.whiteSpace = 'nowrap';
-    nameDiv.textContent = m.username || 'User';
-
-    meta.appendChild(nameDiv);
-
-    // Add BOT tag if member is a bot
-    if (m.bot) {
-      const botTag = document.createElement('span');
-      botTag.textContent = 'BOT';
-      botTag.style.background = 'var(--accent)'; // or any color you want
-      botTag.style.color = '#fff';
-      botTag.style.fontSize = '10px';
-      botTag.style.padding = '2px 4px';
-      botTag.style.borderRadius = '4px';
-      botTag.style.flexShrink = '0';
-      meta.appendChild(botTag);
-    }
-
-    el.appendChild(img);
-    el.appendChild(meta);
-    membersGrid.appendChild(el);
-  });
-}
-
-
-  } catch (err) {
-    console.error('Widget/Preview fetch failed', err);
-    serverTitle.textContent = 'Server (unavailable)';
-    serverDesc.textContent = 'Widget not available — enable widget or preview in server settings';
-    presencePill.textContent = '• — online';
-    totalPill.textContent = '• — members';
-    stat1.textContent = stat2.textContent = stat3.textContent = '—';
-    avatarsBox.innerHTML = '';
-    membersGrid.innerHTML = '';
-  }
-}
-// --- END fetchWidget replacement ---
-
-
-    // initial fetch and refresh
-    fetchWidget();
-    qs('#refreshBtn').addEventListener('click', fetchWidget);
-
-    // small background particle system
-    (function(){
-      const c = document.getElementById('bg-canvas');
-      const ctx = c.getContext('2d');
-      let w=innerWidth,h=innerHeight,dpr=window.devicePixelRatio||1;
-      function resize(){w=innerWidth;h=innerHeight;c.width=w*dpr;c.height=h*dpr;c.style.width=w+'px';c.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}
-      addEventListener('resize', resize);resize();
-      const particles=[];const PA=80;
-      for(let i=0;i<PA;i++){particles.push({x:Math.random()*w,y:Math.random()*h, vx:(Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.4, r:Math.random()*2.3+0.6, o:Math.random()*0.9})}
-      function frame(){ctx.clearRect(0,0,w,h);
-        for(let p of particles){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;ctx.beginPath();ctx.globalAlpha=p.o*0.9;ctx.fillStyle='#7b8cf1';ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();}
-        requestAnimationFrame(frame);
-      }
-      frame();
-    })();
-
-    // keyboard shortcut: J to open join modal
-    addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='j') openModal('Join Server', 'You will be redirected to Discord to join the server.', INVITE) });
-
-    // progressive enhancement: if user clicks join link in modal, open in new tab and track
-    modalJoin.addEventListener('click', ()=>{
-      // simple tracking hook: could be extended to analytics
-      console.log('User clicked join');
-    });
-
-    // quick accessibility: focus outlines
-    document.addEventListener('click', (e)=>{ if(e.target.matches('.btn')) e.target.focus(); });
-
-    // small UX: animate title to show server name when loaded
-    const titleEl = qs('#site-title');
-    setInterval(()=>{
-      titleEl.style.transform = 'translateY(-2px)';setTimeout(()=>titleEl.style.transform='translateY(0)',220);
-    },4000);
-
-  </script>
-
-<!-- Team Modal -->
-<div id="teamModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <section id="team" style="padding:40px 20px;">
-      <h2 style="text-align:center; font-size:32px; margin-bottom:40px;">Our Team</h2>
-
-      <!-- Developer -->
-      <div class="team-category">
-        <h3 style="text-align:center; color:#73a3ec; font-size:24px; margin-bottom:20px;">Developer</h3>
-        <div class="team-member">
-          <div class="member-card developer">
-            <img src="https://i.ibb.co/VWvh7CK3/25786405e9f87e99ef44fa49a0258b93.png" alt="A3 (9c.c)">
-            <p>A3 (9c.c)</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Main Owner -->
-      <div class="team-category" style="margin-top:40px;">
-        <h3 style="text-align:center; color:gold; font-size:24px; margin-bottom:20px;">Owner</h3>
-        <div class="team-member">
-          <div class="member-card main-owner crowned">
-            <img src="https://i.ibb.co/Zp6k52Tz/670a91a24067fe5a6edddd7b7a0d9ff7.png" alt="BA3O9 (ba3os) T">
-            <p>BA3O9 (ba3os)</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Co-Owners & Founders -->
-      <div class="team-category" style="margin-top:40px;">
-        <h3 style="text-align:center; color:#4caf50; font-size:24px; margin-bottom:20px;">Co-Owners & Founders</h3>
-        <div class="team-member">
-          <div class="member-card co-owner"><img src="https://i.ibb.co/VppNPJGf/5bbd5502ddb6e8b79b8d1b060508f0c9.png" alt="V E N (4_zv)"><p>V E N (4_zv)</p></div>
-          <div class="member-card co-owner"><img src="https://i.ibb.co/d4C7YdJK/dcd398626a7cc01a93e91158f56ca7c3.png" alt="22 (fcsul22an)"><p>22 (fcsul22an)</p></div>
-          <div class="member-card co-owner"><img src="https://i.ibb.co/h1DdZdYT/3df5a092d6a0d6d9c437b89ee73cc9de.png" alt="Wanted (ib4o)"><p>Wanted (ib4o)</p></div>
-          <div class="member-card co-owner"><img src="https://i.ibb.co/9HbXv31t/6c9497071bb7ef8e463eaf1bf1e825ba.png" alt="Daddy Panadol (p4anadol)"><p>Daddy Panadol (p4anadol)</p></div>
-          <div class="member-card co-owner"><img src="https://i.ibb.co/cS0pP5QG/bc168f0675a7fe62a522f3565e1299a7.png" alt="DEW (abood)"><p>DEW (abood)</p></div>
-        </div>
-      </div>
-    </section>
+  <div class="team-section">
+    <h3>Team Members</h3>
+    <div class="team">
+      <div class="member"><strong>Amir Majdi Alomari</strong></div>
+      <div class="member"><strong>Baraa Mohamed Hashem</strong></div>
+      <div class="member"><strong>Abdulrahman Mohammed AbdulSattar</strong></div>
+    </div>
   </div>
 </div>
 
-<style>
-/* Modal overlay */
-.modal {
-  display: block; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; 
-  z-index: 9999;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.2);
-}
-
-.modal-content {
-  position: relative;
-  margin: 40px auto;
-  max-width: 1200px;
-  background: rgba(0,0,0,0.4);
-  border-radius: 16px;
-  padding: 20px;
-  box-sizing: border-box;
-  height: calc(180vh - 180px); 
-  overflow-y: auto;            
-  padding-bottom: 20px;        
-}
-
-/* Close button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #fff;
-  color: #333;
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  z-index: 10000;
-  transition: 0.3s;
-}
-.close:hover {
-  background: gold;
-  color: #000;
-}
-
-/* Team cards */
-.member-card{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  gap:10px;
-  background: rgba(17,17,17,0.7);
-  padding:12px 16px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.05);
-  box-shadow:0 4px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.member-card img{
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid rgba(255,255,255,0.1);
-}
-.member-card p{
-  margin:0;
-  font-weight:600;
-  color:white;
-}
-.member-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 8px 30px rgba(0,0,0,0.5);
-}
-
-/* Glows */
-.developer {
-  border: 2px solid rgb(108, 108, 240);
-  animation: glow-blue 3s ease-in-out infinite alternate;
-  box-shadow: 0 0 12px rgb(108,108,240), 0 4px 20px rgba(0,0,0,0.3);
-}
-
-@keyframes glow-blue {
-  0% {
-    box-shadow: 0 0 8px rgb(100,100,255), 0 4px 20px rgba(0,0,0,0.3);
-    border-color: rgb(100,100,255);
-  }
-  25% {
-    box-shadow: 0 0 15px rgb(120,120,255), 0 4px 20px rgba(0,0,0,0.3);
-    border-color: rgb(120,120,255);
-  }
-  50% {
-    box-shadow: 0 0 18px rgb(108,108,240), 0 4px 20px rgba(0,0,0,0.3);
-    border-color: rgb(108,108,240);
-  }
-  75% {
-    box-shadow: 0 0 12px rgb(130,130,255), 0 4px 20px rgba(0,0,0,0.3);
-    border-color: rgb(130,130,255);
-  }
-  100% {
-    box-shadow: 0 0 10px rgb(108,108,255), 0 4px 20px rgba(0,0,0,0.3);
-    border-color: rgb(108,108,255);
-  }
-}
-
-.main-owner{
-  border:2px solid gold;
-  box-shadow:0 0 20px gold, 0 4px 20px rgba(0,0,0,0.3);
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow{
-  0%{box-shadow:0 0 10px gold, 0 4px 20px rgba(0,0,0,0.3);}
-  100%{box-shadow:0 0 25px gold, 0 4px 20px rgba(0,0,0,0.3);}
-}
-
-.co-owner {
-  border: 2px solid #ff9800;
-  box-shadow: 0 0 6px #ff9800, 0 4px 15px rgba(0,0,0,0.3);
-  transition: box-shadow 0.5s ease-in-out;
-}
-.co-owner:hover {
-  box-shadow: 0 0 12px #ff9800, 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* Layout */
-.team-member{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:20px;
-}
-
-/* Responsive */
-@media (max-width:768px){
-  .member-card img{width:80px;height:80px;}
-}
-@media (max-width:480px){
-  .member-card img{width:60px;height:60px;}
-  .member-card{padding:10px;}
-}
-
-.crowned {
-  position: relative;
-}
-
-.crowned::before {
-  content: "👑"; 
-  position: absolute;
-  top: -25px;        /* slightly above the card */
-  right: -16px;      /* slightly outside the corner */
-  transform: rotate(15deg); /* tilt to the right */
-  font-size: 32px;
-  z-index: 10;
-  text-shadow: 0 0 5px gold, 0 0 10px gold; /* subtle glow */
-  transition: transform 0.3s;
-}
-
-.crowned::before:hover {
-  transform: rotate(15deg) scale(1.1); /* slight playful hover */
-}
-
-
-
-
-</style>
-
 <script>
-// Close button
-document.querySelector('.close').addEventListener('click', function(){
-  document.getElementById('teamModal').style.display='none';
-  document.body.style.overflow = 'auto'; 
+const allowedNames = ["baraa","amir","hamani"];
+const fullAccessName = "amir"; // only Amir gets full access
+const gofilePassword = "a3";
+
+const submitBtn = document.getElementById('submitBtn');
+const username = document.getElementById('username');
+const errorMsg = document.getElementById('errorMsg');
+const loginCard = document.getElementById('loginCard');
+const launcherCard = document.getElementById('launcherCard');
+const userDisplay = document.getElementById('userDisplay');
+
+function validateName() {
+  const name = username.value.trim().toLowerCase();
+  if(allowedNames.includes(name)){
+    userDisplay.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+    loginCard.style.display = 'none';
+    launcherCard.style.display = 'block';
+    setupButtons(name);
+  } else {
+    errorMsg.style.display = 'block';
+    setTimeout(()=>{ errorMsg.style.display='none'; },2000);
+  }
+}
+
+submitBtn.addEventListener('click', validateName);
+username.addEventListener('keydown', (e)=>{
+  if(e.key === 'Enter'){ e.preventDefault(); validateName(); }
 });
 
-// Prevent background scroll
-document.body.style.overflow = 'hidden';
+function setupButtons(name){
+  const buttons = document.querySelectorAll('.siteBtn');
+  buttons.forEach(btn=>{
+    const site = btn.dataset.site;
+    if(name !== fullAccessName){
+      // Only KNRC + VEX IQ YouTube for other members
+      if(site !== "https://theknrc.com/" && site !== "https://youtu.be/RN-UyJbe_yg"){
+        btn.style.display = "none";
+      }
+    }
+
+    btn.addEventListener('click', ()=>{
+      if(site === "gofile"){
+        openGofile(name);
+      } else {
+        window.open(site, '_blank');
+      }
+    });
+  });
+
+  document.getElementById('openAll').addEventListener('click', ()=>{
+    if(name === fullAccessName){
+      buttons.forEach(btn=>{
+        if(btn.dataset.site === "gofile"){
+          openGofile(name);
+        } else {
+          window.open(btn.dataset.site, '_blank');
+        }
+      });
+    } else {
+      window.open("https://theknrc.com/", '_blank');
+      window.open("https://youtu.be/RN-UyJbe_yg", '_blank');
+    }
+  });
+}
+
+function openGofile(name){
+  if(name !== fullAccessName){
+    alert("Access Denied!");
+    return;
+  }
+  const pw = prompt("Enter password to access Gofile:");
+  if(pw === gofilePassword){
+    window.open('https://gofile.io/d/5o4XeI', '_blank');
+  } else {
+    alert("Incorrect password!");
+  }
+}
 </script>
-
-
 
 </body>
 </html>
