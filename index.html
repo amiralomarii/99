@@ -827,6 +827,28 @@
                         <i class="fas fa-arrow-right select-btn-icon"></i>
                     </button>
                 </div>
+
+                <div class="profile-card" data-user="fouzan">
+                    <div class="profile-border"></div>
+                    <img src="https://github.com/amiralomarii/99/blob/main/FUZAN%20FARAJ.jpg?raw=true" alt="Fouzan Faraj" class="profile-image">
+                    <div class="profile-name">Fouzan Faraj</div>
+                    <div class="profile-role">Team Member</div>
+                    <button class="select-btn">
+                        Select Profile
+                        <i class="fas fa-arrow-right select-btn-icon"></i>
+                    </button>
+                </div>
+
+                <div class="profile-card" data-user="rashid">
+                    <div class="profile-border"></div>
+                    <img src="https://github.com/amiralomarii/99/blob/main/RASHID%20KHALED.jpg?raw=true" alt="Rashid Khaled" class="profile-image">
+                    <div class="profile-name">Rashid Khaled</div>
+                    <div class="profile-role">Team Member</div>
+                    <button class="select-btn">
+                        Select Profile
+                        <i class="fas fa-arrow-right select-btn-icon"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -909,6 +931,14 @@
                             <div class="member-name">Abdulrahman Mohammed Abdulstar</div>
                             <div class="member-role">Builder & Programmer</div>
                         </div>
+                        <div class="team-member">
+                            <div class="member-name">Fouzan Faraj</div>
+                            <div class="member-role">Team Member</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-name">Rashid Khaled</div>
+                            <div class="member-role">Team Member</div>
+                        </div>
                     </div>
                 </div>
 
@@ -925,14 +955,27 @@
             moh: "moh",         // Mohammed Saad password
             amir: "a3!!",       // Amir password
             baraa: "b",         // Baraa password
-            abdulrahman: "abd"  // Abdulrahman password
+            abdulrahman: "abd", // Abdulrahman password
+            fouzan: "f",        // Fouzan Faraj password
+            rashid: "r"         // Rashid Khaled password
         };
 
         const userImages = {
             moh: "https://i.ibb.co/gLHczL51/Mohammed-Saad.jpg",
             amir: "https://i.ibb.co/xKT7qf8g/unnamed-3.jpg",
             baraa: "https://i.ibb.co/8g2vKpV3/Baraa-picture.jpg",
-            abdulrahman: "https://i.ibb.co/TMvrBqpG/Hamani-Dishdasha.jpg"
+            abdulrahman: "https://i.ibb.co/TMvrBqpG/Hamani-Dishdasha.jpg",
+            fouzan: "https://github.com/amiralomarii/99/blob/main/FUZAN%20FARAJ.jpg?raw=true",
+            rashid: "https://github.com/amiralomarii/99/blob/main/RASHID%20KHALED.jpg?raw=true"
+        };
+
+        const userDisplayNames = {
+            moh: "Mohammed",
+            amir: "Amir", 
+            baraa: "Baraa",
+            abdulrahman: "Abdulrahman",
+            fouzan: "Fouzan",
+            rashid: "Rashid"
         };
 
         let selectedUser = "";
@@ -958,7 +1001,7 @@
         function login() {
             const password = document.getElementById("passwordInput").value;
             if(password === userPasswords[selectedUser]) {
-                const displayName = selectedUser.charAt(0).toUpperCase() + selectedUser.slice(1);
+                const displayName = userDisplayNames[selectedUser];
                 document.getElementById("userDisplay").textContent = displayName;
                 
                 showScreen('launcherScreen');
