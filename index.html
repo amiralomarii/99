@@ -368,6 +368,33 @@
             animation: gradientMove 3s linear infinite;
         }
 
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            color: #00d4ff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             100% { background-position: 200% 50%; }
@@ -832,7 +859,7 @@
                     <div class="profile-border"></div>
                     <img src="https://github.com/amiralomarii/99/blob/main/FUZAN%20FARAJ.jpg?raw=true" alt="Fouzan Faraj" class="profile-image">
                     <div class="profile-name">Fouzan Faraj</div>
-                    <div class="profile-role">Systems / Tester</div>
+                    <div class="profile-role">Team Member</div>
                     <button class="select-btn">
                         Select Profile
                         <i class="fas fa-arrow-right select-btn-icon"></i>
@@ -843,7 +870,7 @@
                     <div class="profile-border"></div>
                     <img src="https://github.com/amiralomarii/99/blob/main/RASHID%20KHALED.jpg?raw=true" alt="Rashid Khaled" class="profile-image">
                     <div class="profile-name">Rashid Khaled</div>
-                    <div class="profile-role">Designer / Strategy</div>
+                    <div class="profile-role">Team Member</div>
                     <button class="select-btn">
                         Select Profile
                         <i class="fas fa-arrow-right select-btn-icon"></i>
@@ -856,6 +883,9 @@
         <div class="screen" id="loginScreen">
             <div class="login-container">
                 <div class="login-card">
+                    <button class="back-btn" id="backBtn" title="Back to Profile Selection">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
                     <div class="logo">
                         <img id="loginLogo" src="https://i.ibb.co/vCF5tR84/download-20.png" alt="User Photo">
                     </div>
@@ -961,7 +991,7 @@
         };
 
         const userImages = {
-            moh: "https://github.com/amiralomarii/99/blob/main/Mohammed%20Saad%20-%20Copy.jpg?raw=true",
+             moh: "https://github.com/amiralomarii/99/blob/main/Mohammed%20Saad%20-%20Copy.jpg?raw=true",
             amir: "https://github.com/amiralomarii/99/blob/main/unnamed%20(3).jpg?raw=true",
             baraa: "https://github.com/amiralomarii/99/blob/main/Baraa%20picture%20-%20Copy.jpg?raw=true",
             abdulrahman: "https://github.com/amiralomarii/99/blob/main/Hamani%20Dishdasha.jpg?raw=true",
@@ -971,7 +1001,7 @@
 
         const userDisplayNames = {
             moh: "Mohammed",
-            amir: "Amir", 
+            amir: "Amir Alomari", 
             baraa: "Baraa",
             abdulrahman: "Abdulrahman",
             fouzan: "Fouzan",
@@ -1103,6 +1133,12 @@
             `;
             document.head.appendChild(style);
         }
+
+        // Back button functionality
+        document.getElementById('backBtn').addEventListener('click', function() {
+            document.getElementById('passwordInput').value = "";
+            showScreen('profileScreen');
+        });
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
